@@ -1,6 +1,6 @@
 <script lang="ts">
   export interface Props {
-    binary: Uint8Array;
+    binary: Uint8Array | number[];
     label: string;
   }
 
