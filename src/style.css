@@ -1,0 +1,150 @@
+:root {
+  --bg: #132738;
+  --text-hl: #b7f9b2;
+  --bg-light-gray: #344b62;
+  --bg-pale-blue: #1e4575;
+  --bg-pale-peach: #483a4a;
+  --bg-pale-mint: #1a4d43;
+  --bg-pale-lavender: #37355f;
+  --bg-light-cream: #3e4833;
+  --bg-sky-blue: #155b7a;
+  --bg-light-sage: #1f4e2c;
+  --font-mono: "CaskaydiaMono Nerd Font";
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@page {
+  size: 2560x1440px;
+}
+
+html {
+  -webkit-print-color-adjust: exact;
+}
+
+table .quantum-0 {
+  background-color: var(--bg-light-gray);
+}
+table .quantum-1 {
+  background-color: var(--bg-pale-blue);
+}
+table .quantum-2 {
+  background-color: var(--bg-pale-peach);
+}
+table .quantum-3 {
+  background-color: var(--bg-pale-mint);
+}
+table .quantum-4 {
+  background-color: var(--bg-pale-lavender);
+}
+table .quantum-5 {
+  background-color: var(--bg-light-cream);
+}
+table .quantum-6 {
+  background-color: var(--bg-sky-blue);
+}
+table .quantum-7 {
+  background-color: var(--bg-light-sage);
+}
+
+.high-int {
+  background-color: var(--bg-sky-blue);
+}
+
+.low-int {
+  background-color: var(--bg-light-sage);
+}
+
+pre code {
+  font-family: var(--font-mono);
+}
+
+table {
+  font-family: var(--font-mono);
+  line-height: 1.75;
+}
+
+table.mapping {
+  border-collapse: collapse;
+  td,
+  th {
+    border: 1px solid #fff;
+    border-collapse: collapse;
+  }
+
+  tbody td {
+    width: 1rem;
+    text-align: center;
+  }
+}
+
+table.alphabet {
+  border-collapse: collapse;
+
+  .letter {
+    font-size: 2.75rem;
+    grid-row: 1 / span 2;
+    line-height: 1;
+  }
+
+  td {
+    height: 2.5rem;
+    border: 1px solid currentColor;
+
+    > div {
+      display: grid;
+      gap: 0 0.5rem;
+      grid-template-columns: auto 1fr;
+      grid-template-rows: 1fr 1fr;
+      margin: 0.75rem;
+      align-items: center;
+      justify-content: center;
+      text-align: right;
+    }
+  }
+
+  .binary {
+    grid-row: 2;
+    opacity: 0.75;
+  }
+
+  .int {
+    grid-row: 1;
+  }
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  font-family: Roboto;
+  background: var(--bg);
+  color: #fff;
+}
+
+h2 {
+  color: var(--text-hl);
+  margin-top: 0;
+  text-align: center;
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  width: 800px;
+  text-align: center;
+  font-size: 1.25rem;
+  margin-inline: auto;
+}
+
+pre {
+  font-size: 1.25rem;
+  margin-bottom: 0;
+}
