@@ -69,6 +69,8 @@ table {
 }
 
 table.mapping {
+  min-width: 600px;
+
   border-collapse: collapse;
   td,
   th {
@@ -147,4 +149,23 @@ p {
 pre {
   font-size: 1.25rem;
   margin-bottom: 0;
+}
+
+section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.transition {
+  margin: 1em;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  > code {
+    font-size: 1rem;
+  }
 }

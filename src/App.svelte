@@ -14,7 +14,7 @@
       case "PageDown":
       case " ":
         e.preventDefault();
-        if (active >= slides.length) return;
+        if (active >= slides.length - 1) return;
         active++;
         break;
 
@@ -29,6 +29,8 @@
   }
 </script>
 
-<Component />
+<section>
+  <Component />
+</section>
 
 <svelte:window onkeydown={onKeyDown} />
