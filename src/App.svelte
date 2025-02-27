@@ -1,11 +1,27 @@
 <script lang="ts">
   import Enrolment from "./slides/Enrolment.svelte";
+  import TimeAndStep from "./slides/TimeAndStep.svelte";
   import TOTPKey from "./slides/TOTPKey.svelte";
 
-  const slides = [Enrolment, TOTPKey];
+  const slides = [Enrolment, TOTPKey, TimeAndStep];
 
-  let active = $state(0);
+  const qs = new URLSearchParams(location.search);
+  const activeIndex = (() => {
+    const param = Number(qs.get("active") ?? "0");
+    if (param < 0) return 0;
+    if (param >= slides.length - 1) return slides.length - 1;
+    return param;
+  })();
+
+  let active = $state(activeIndex);
   let Component = $derived(slides[active]);
+
+  function setActive(index: number) {
+    if (index < 0 || index >= slides.length) return;
+    active = index;
+    const qs = new URLSearchParams({ active: String(index) });
+    history.pushState(null, "", `${location.pathname}?${qs}`);
+  }
 
   function onKeyDown(e: KeyboardEvent) {
     switch (e.key) {
@@ -14,16 +30,14 @@
       case "PageDown":
       case " ":
         e.preventDefault();
-        if (active >= slides.length - 1) return;
-        active++;
+        setActive(active + 1);
         break;
 
       case "ArrowUp":
       case "ArrowLeft":
       case "PageUp":
         e.preventDefault();
-        if (active <= 0) return;
-        active--;
+        setActive(active - 1);
         break;
     }
   }

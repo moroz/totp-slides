@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { base32 } from "@scure/base";
+  import Binary from "../components/Binary.svelte";
   import { SHARED_SECRET, SHARED_SECRET_BIN } from "../lib/config";
 
   let time = $state(Math.floor(Date.now() / 1000));
@@ -47,20 +47,7 @@
 
 <div class="transition">👇 <code> base32_decode() </code>👇</div>
 
-<table class="mapping">
-  <thead>
-    <tr>
-      <th colspan="20">Shared secret (binary)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      {#each SHARED_SECRET_BIN as byte}
-        <td>{byte.toString(16).padStart(2, "0")}</td>
-      {/each}
-    </tr>
-  </tbody>
-</table>
+<Binary binary={SHARED_SECRET_BIN} label="Shared secret (binary):" />
 
 <!---->
 <!-- <p>UNIX timestamp: {time}</p> -->
