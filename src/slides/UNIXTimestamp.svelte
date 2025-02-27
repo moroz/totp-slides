@@ -1,23 +1,38 @@
 <script>
   import useUNIXTime from "../lib/useUNIXTime.svelte";
+  import hljs from "highlight.js/lib/core";
+  import c from "highlight.js/lib/languages/c";
   let unix = useUNIXTime();
+  import style from "svelte-highlight/styles/horizon-dark";
+
+  const code = `\
+#include <time.h>
+#include <stdio.h>
+
+time_t unixepoch() {
+  struct timespec tp;
+  clock_gettime(CLOCK_REALTIME, &tp);
+  return tp.tv_sec;
+}
+
+int main() {
+  time_t now = unixepoch();
+  printf("%ld\\n", now); // %{epoch}
+  return 0;
+}`;
+
+  hljs.registerLanguage("c", c);
+  const highlighted = $state(hljs.highlight(code, { language: "c" }).value);
+
+  let html = $derived.by(() => {
+    return highlighted.replace(`%{epoch}`, String(unix.time));
+  });
 </script>
+
+<svelte:head>
+  {@html style}
+</svelte:head>
 
 <h2>2. Get current UNIX timestamp</h2>
 
-<pre><code
-    >#include &lt;time.h&gt;
-#include &lt;stdio.h&gt;
-
-time_t unixepoch() &#123;
-  struct timespec tp;
-  clock_gettime(CLOCK_REALTIME, &amp;tp);
-  return tp.tv_sec;
-&#125;
-
-int main() &#123;
-  time_t now = unixepoch();
-  printf("%ld\n", now); // {unix.time}
-  return 0;
-&#125;
-  </code></pre>
+<pre data-language="c"><code class="hljs">{@html html}</code></pre>
