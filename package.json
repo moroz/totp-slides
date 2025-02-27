@@ -26,6 +26,7 @@
     ]
   },
   "dependencies": {
-    "@scure/base": "^1.2.4"
+    "@scure/base": "^1.2.4",
+    "qrcode-generator": "^1.4.4"
   }
 }

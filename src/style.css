@@ -9,7 +9,7 @@
   --bg-light-cream: #3e4833;
   --bg-sky-blue: #155b7a;
   --bg-light-sage: #1f4e2c;
-  --font-mono: "CaskaydiaMono Nerd Font";
+  --font-mono: "CaskaydiaMono Nerd Font", "CaskaydiaMono NF";
 }
 
 *,
@@ -59,7 +59,8 @@ table .quantum-7 {
   background-color: var(--bg-light-sage);
 }
 
-pre code {
+pre code,
+dl {
   font-family: var(--font-mono);
 }
 
@@ -69,7 +70,8 @@ table {
 }
 
 table.mapping {
-  min-width: 600px;
+  width: 1024px;
+  font-size: 22px;
 
   border-collapse: collapse;
   td,
@@ -120,11 +122,9 @@ table.alphabet {
 }
 
 body {
-  height: 100vh;
   margin: 0;
   padding: 0;
   display: grid;
-  place-items: center;
   font-family: Roboto;
   background: var(--bg);
   color: #fff;
@@ -152,20 +152,24 @@ pre {
 }
 
 section {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .transition {
   margin: 1em;
-  font-size: 1.5rem;
+  font-size: 22px;
   display: flex;
   align-items: center;
   gap: 1rem;
 
   > code {
-    font-size: 1rem;
+    font-size: 25px;
   }
 }

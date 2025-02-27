@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Alphabet from "./slides/Alphabet.svelte";
+  import Enrolment from "./slides/Enrolment.svelte";
   import TOTPKey from "./slides/TOTPKey.svelte";
 
-  const slides = [Alphabet, TOTPKey];
+  const slides = [Enrolment, TOTPKey];
 
   let active = $state(0);
   let Component = $derived(slides[active]);

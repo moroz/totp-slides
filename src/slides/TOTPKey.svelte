@@ -25,6 +25,11 @@
 
 <h2>1. Decode shared secret</h2>
 
+<p>
+  The secret is provided to the user in Base32, but we only really care about
+  its binary form:
+</p>
+
 <table class="mapping">
   <thead>
     <tr>
@@ -45,7 +50,7 @@
 <table class="mapping">
   <thead>
     <tr>
-      <th colspan="20">Shared secret</th>
+      <th colspan="20">Shared secret (binary)</th>
     </tr>
   </thead>
   <tbody>
@@ -57,23 +62,16 @@
   </tbody>
 </table>
 
-<p>UNIX timestamp: {time}</p>
-<p>T = UNIX timestamp / 30 = {T}</p>
-
-<table class="mapping">
-  <tbody>
-    <tr>
-      {#each Tbytes as byte}
-        <td>{byte.toString(16).padStart(2, "0")}</td>
-      {/each}
-    </tr>
-  </tbody>
-</table>
-
-<style>
-  .arrow {
-    font-size: 2.75rem;
-    line-height: 1;
-    margin: 0;
-  }
-</style>
+<!---->
+<!-- <p>UNIX timestamp: {time}</p> -->
+<!-- <p>T = UNIX timestamp / 30 = {T}</p> -->
+<!---->
+<!-- <table class="mapping"> -->
+<!--   <tbody> -->
+<!--     <tr> -->
+<!--       {#each Tbytes as byte} -->
+<!--         <td>{byte.toString(16).padStart(2, "0")}</td> -->
+<!--       {/each} -->
+<!--     </tr> -->
+<!--   </tbody> -->
+<!-- </table> -->
