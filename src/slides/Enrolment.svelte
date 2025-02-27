@@ -76,6 +76,7 @@
 
   .url {
     pre {
+      font-size: 1.375rem;
       margin: 0;
     }
   }

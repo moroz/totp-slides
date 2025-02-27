@@ -1,9 +1,9 @@
 <script lang="ts">
   import Enrolment from "./slides/Enrolment.svelte";
-  import TimeAndStep from "./slides/TimeAndStep.svelte";
+  import UNIXTimestamp from "./slides/UNIXTimestamp.svelte";
   import TOTPKey from "./slides/TOTPKey.svelte";
 
-  const slides = [Enrolment, TOTPKey, TimeAndStep];
+  const slides = [Enrolment, TOTPKey, UNIXTimestamp];
 
   const qs = new URLSearchParams(location.search);
   const activeIndex = (() => {
