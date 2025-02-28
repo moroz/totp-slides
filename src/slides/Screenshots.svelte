@@ -1,12 +1,6 @@
 <div class="layout">
   <div class="image">
-    <img
-      src="/google-authenticator-1.png"
-      alt=""
-      class="screenshot"
-      width="395"
-      height="856"
-    />
+    <img src="/google-authenticator-1.png" alt="" class="screenshot" />
   </div>
   <div class="text">
     <h2>What the Smartphone App Lobby Won't Tell You</h2>
