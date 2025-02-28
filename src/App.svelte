@@ -6,10 +6,15 @@
   import HMAC2 from "./slides/HMAC2.svelte";
   import OTP from "./slides/OTP.svelte";
   import Screenshots from "./slides/Screenshots.svelte";
+  import Requirements from "./slides/Requirements.svelte";
+  import style from "svelte-highlight/styles/horizon-dark";
+  import hljs from "highlight.js/lib/core";
+  import c from "highlight.js/lib/languages/c";
 
   const slides = [
     Screenshots,
     Enrolment,
+    Requirements,
     TOTPKey,
     UNIXTimestamp,
     HMAC1,
@@ -27,6 +32,7 @@
 
   let active = $state(activeIndex);
   let Component = $derived(slides[active]);
+  hljs.registerLanguage("c", c);
 
   function setActive(index: number) {
     if (index < 0 || index >= slides.length) return;
@@ -54,6 +60,10 @@
     }
   }
 </script>
+
+<svelte:head>
+  {@html style}
+</svelte:head>
 
 <section>
   <Component />

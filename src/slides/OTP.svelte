@@ -4,8 +4,6 @@
   import useUNIXTime from "../lib/useUNIXTime.svelte";
   import Digest from "../components/Digest.svelte";
   import hljs from "highlight.js/lib/core";
-  import c from "highlight.js/lib/languages/c";
-  import style from "svelte-highlight/styles/horizon-dark";
 
   const time = useUNIXTime();
   const digest = useDigest(SHARED_SECRET_BIN, time.timeStepEncoded);
@@ -56,7 +54,6 @@ uint32_t binary = (digest[offset + 0] & 0x7F) << 24 | // %{bytes[0]} << 24
 
 int otp = binary % 1000000; // %{binary} % 1000000 = %{otp}`;
 
-  hljs.registerLanguage("c", c);
   const highlighted = $state(hljs.highlight(code, { language: "c" }).value);
 
   let html = $derived.by(() => {

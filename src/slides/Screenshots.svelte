@@ -1,9 +1,12 @@
-<script lang="ts">
-</script>
-
 <div class="layout">
   <div class="image">
-    <img src="/google-authenticator-1.png" alt="" class="screenshot" />
+    <img
+      src="/google-authenticator-1.png"
+      alt=""
+      class="screenshot"
+      width="395"
+      height="856"
+    />
   </div>
   <div class="text">
     <h2>What the Smartphone App Lobby Won't Tell You</h2>
@@ -13,16 +16,6 @@
 </div>
 
 <style>
-  .image {
-    p {
-      width: unset;
-      font-size: 0.875rem;
-    }
-  }
-
-  .text {
-  }
-
   .layout {
     display: grid;
     width: 1200px;

@@ -1,9 +1,7 @@
 <script>
   import useUNIXTime from "../lib/useUNIXTime.svelte";
   import hljs from "highlight.js/lib/core";
-  import c from "highlight.js/lib/languages/c";
   let unix = useUNIXTime();
-  import style from "svelte-highlight/styles/horizon-dark";
 
   const code = `\
 #include <time.h>
@@ -21,17 +19,12 @@ int main() {
   return 0;
 }`;
 
-  hljs.registerLanguage("c", c);
   const highlighted = $state(hljs.highlight(code, { language: "c" }).value);
 
   let html = $derived.by(() => {
     return highlighted.replace(`%{epoch}`, String(unix.time));
   });
 </script>
-
-<svelte:head>
-  {@html style}
-</svelte:head>
 
 <h2>2. Get current UNIX timestamp</h2>
 
