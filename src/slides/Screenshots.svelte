@@ -20,15 +20,22 @@
     display: grid;
     width: 1200px;
     grid-template-columns: auto 1fr;
-    gap: 5rem;
-    align-items: center;
+    align-items: flex-start;
+  }
+
+  .text p {
+    color: yellow;
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px black;
   }
 
   h2 {
     line-height: 1.3;
+    margin-top: 5rem;
   }
 
   .screenshot {
     height: 80vh;
+    transform: translateY(200px) rotate(-15deg);
   }
 </style>

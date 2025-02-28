@@ -68,10 +68,6 @@ int otp = binary % 1000000; // %{binary} % 1000000 = %{otp}`;
   });
 </script>
 
-<svelte:head>
-  {@html style}
-</svelte:head>
-
 <h2>5. Calculate One-Time Password</h2>
 
 <p>
