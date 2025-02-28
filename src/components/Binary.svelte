@@ -4,12 +4,19 @@
     label?: string;
     highlighted?: number[];
     indexed?: boolean;
+    wide?: boolean;
   }
 
-  let { label, binary, indexed = false, highlighted = [] }: Props = $props();
+  let {
+    label,
+    binary,
+    indexed = false,
+    highlighted = [],
+    wide = false,
+  }: Props = $props();
 </script>
 
-<table class="mapping">
+<table class="mapping" class:wide>
   {#if label}
     <thead>
       <tr>
@@ -40,8 +47,17 @@
     margin-top: 1.5rem;
   }
 
+  .wide {
+    table-layout: initial;
+    width: auto;
+
+    td {
+      width: 3.5rem;
+    }
+  }
+
   .hl {
-    background: oklch(0.841 0.238 128.85);
+    background: oklch(0.865 0.127 207.078);
     color: black;
   }
 

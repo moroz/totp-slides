@@ -10,6 +10,7 @@
   --bg-sky-blue: #155b7a;
   --bg-light-sage: #1f4e2c;
   --font-mono: "CaskaydiaMono Nerd Font", "CaskaydiaMono NF";
+  --font-sans: Roboto;
 }
 
 *,
@@ -81,6 +82,10 @@ table.mapping {
     border-collapse: collapse;
   }
 
+  thead {
+    font-family: var(--font-sans);
+  }
+
   tbody td {
     width: 1rem;
     text-align: center;
@@ -141,10 +146,11 @@ h2 {
 }
 
 p {
-  width: 800px;
+  min-width: 800px;
   text-align: center;
   font-size: 1.25rem;
   margin-inline: auto;
+  line-height: 1.5;
 }
 
 pre {
@@ -174,4 +180,13 @@ section {
   > code {
     font-size: 25px;
   }
+}
+
+:not(pre) > code {
+  font-family: var(--font-mono);
+  background: oklch(0.372 0.044 257.287);
+  display: inline-block;
+  padding-inline: 0.125em;
+  line-height: 1.25;
+  border-radius: 2px;
 }

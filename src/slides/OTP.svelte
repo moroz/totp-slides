@@ -77,6 +77,12 @@ int otp = binary % 1000000; // %{binary} % 1000000 = %{otp}`;
 
 <h2>5. Calculate One-Time Password</h2>
 
+<p>
+  Finally, take the last 6 decimal digits of this number. This is your TOTP
+  code.<br />Pad it with zeroes using (e. g. using <code>left-pad</code>) if it
+  is too short.
+</p>
+
 <Digest
   secret={SHARED_SECRET_BIN}
   timeStep={time.timeStepEncoded}

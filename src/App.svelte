@@ -5,8 +5,17 @@
   import HMAC1 from "./slides/HMAC1.svelte";
   import HMAC2 from "./slides/HMAC2.svelte";
   import OTP from "./slides/OTP.svelte";
+  import Screenshots from "./slides/Screenshots.svelte";
 
-  const slides = [Enrolment, TOTPKey, UNIXTimestamp, HMAC1, HMAC2, OTP];
+  const slides = [
+    Screenshots,
+    Enrolment,
+    TOTPKey,
+    UNIXTimestamp,
+    HMAC1,
+    HMAC2,
+    OTP,
+  ];
 
   const qs = new URLSearchParams(location.search);
   const activeIndex = (() => {
