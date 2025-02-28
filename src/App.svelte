@@ -2,8 +2,9 @@
   import Enrolment from "./slides/Enrolment.svelte";
   import UNIXTimestamp from "./slides/UNIXTimestamp.svelte";
   import TOTPKey from "./slides/TOTPKey.svelte";
+  import HMAC1 from "./slides/HMAC1.svelte";
 
-  const slides = [Enrolment, TOTPKey, UNIXTimestamp];
+  const slides = [Enrolment, TOTPKey, UNIXTimestamp, HMAC1];
 
   const qs = new URLSearchParams(location.search);
   const activeIndex = (() => {

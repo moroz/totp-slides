@@ -15,5 +15,15 @@ export default function useUNIXTime() {
     get time() {
       return time;
     },
+    get timeStep() {
+      return Math.floor(time / 30);
+    },
+    get timeStepEncoded() {
+      const buf = new ArrayBuffer(8);
+      const view = new DataView(buf);
+      const T = Math.floor(time / 30);
+      view.setUint32(4, T, false);
+      return new Uint8Array(buf);
+    },
   };
 }

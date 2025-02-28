@@ -16,7 +16,7 @@
   <tbody>
     <tr>
       {#each binary as byte}
-        <td>{byte.toString(16).padStart(2, "0")}</td>
+        <td>{byte.toString(16).padStart(2, "0").toUpperCase()}</td>
       {/each}
     </tr>
   </tbody>
