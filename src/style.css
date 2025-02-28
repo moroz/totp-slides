@@ -70,8 +70,9 @@ table {
 }
 
 table.mapping {
-  width: 1024px;
-  font-size: 22px;
+  width: 1200px;
+  font-size: 30px;
+  table-layout: fixed;
 
   border-collapse: collapse;
   td,

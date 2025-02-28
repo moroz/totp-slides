@@ -5,10 +5,18 @@
   interface Props {
     timeStep: Uint8Array;
     secret: Uint8Array;
-    label: string;
+    label?: string;
+    highlighted?: number[];
+    indexed?: boolean;
   }
 
-  const { timeStep, secret, label }: Props = $props();
+  const {
+    timeStep,
+    secret,
+    label,
+    highlighted = [],
+    indexed = false,
+  }: Props = $props();
 
   const digest = useDigest(secret, timeStep);
 
@@ -17,4 +25,4 @@
   });
 </script>
 
-<Binary {label} binary={digest.digest} />
+<Binary {label} binary={digest.digest} {highlighted} {indexed} />

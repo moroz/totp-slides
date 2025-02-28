@@ -29,6 +29,9 @@ export default function useDigest(secret: Uint8Array, step: Uint8Array) {
   });
 
   return {
+    get ready() {
+      return !!key;
+    },
     get digest() {
       return digest;
     },
